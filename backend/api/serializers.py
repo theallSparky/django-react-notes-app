@@ -10,3 +10,8 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
+    
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NoteSerializerfiels = ["id", "title", "content", "created_at", "author"]
+        extra_kwargs = {"author": {"read_only": True}}
