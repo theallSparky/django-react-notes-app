@@ -21,6 +21,17 @@ function Home() {
       .catch((err) => alert(err));
   };
 
+  const deleteNote = (id) => {
+    api
+      .delete(`/api/notes/delete/${id}/`)
+      .then((res) => {
+        if (res.status === 204) alert("Note was deleted");
+        else alert("Failed to delete note!");
+      })
+      .catch((error) => alert(error));
+    getNotes();
+  };
+
   return <div>Home</div>;
 }
 
