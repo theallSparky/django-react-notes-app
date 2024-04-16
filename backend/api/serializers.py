@@ -13,5 +13,5 @@ class UserSerializer(serializers.ModelSerializer):
     
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
-        model = NoteSerializerfiels = ["id", "title", "content", "created_at", "author"]
+        model = NoteSerializerFields = ["id", "title", "content", "created_at", "author"]
         extra_kwargs = {"author": {"read_only": True}}
